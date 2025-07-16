@@ -1,0 +1,4 @@
+deploy:
+  stage: deploy
+  script:
+    - "curl --request POST --fail -F variables[PROJECT_NAME]=$CI_PROJECT_NAME -F token=$TRIGGER_TOKEN -F ref=main https://gitlab.imbi.uni-freiburg.de/api/v4/projects/1094/trigger/pipeline"
